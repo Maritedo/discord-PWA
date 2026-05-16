@@ -8,7 +8,10 @@ var update_wco = () => {};
 var wco_integration = false;
 const STORED_STYLES = {
     backgroundColor: "#36393f",
-    titlebarColor: "#202225",
+    titlebarColor: {
+        dark: "#2C2D32",
+        light: "#f3f3f4",
+    },
 };
 function version_is_newer(current, available) {
     let current_subvs = current.split(".");
@@ -22,7 +25,10 @@ function version_is_newer(current, available) {
     }
     return false;
 }
-const theme_element = document.getElementById("theme-color");
+const theme_element = {
+    dark: document.getElementById("theme-color-dark"),
+    light: document.getElementById("theme-color-light"),
+}
 
 window.addEventListener("DOMContentLoaded", (event) => {
     var extNotLoaded;
@@ -77,12 +83,19 @@ window.addEventListener("DOMContentLoaded", (event) => {
                                     titlebarAreaRect = ev
                                         ? ev.titlebarAreaRect
                                         : navigator.windowControlsOverlay.getTitlebarAreaRect();
-                                if (!theme_element.hasAttribute("locked"))
-                                    theme_element.setAttribute(
+                                if (!theme_element.dark.hasAttribute("locked"))
+                                    theme_element.dark.setAttribute(
                                         "content",
                                         visible && wco_integration
                                             ? STORED_STYLES["backgroundColor"]
-                                            : STORED_STYLES["titlebarColor"],
+                                            : STORED_STYLES["titlebarColor"].dark,
+                                    );
+                                if (!theme_element.light.hasAttribute("locked"))
+                                    theme_element.light.setAttribute(
+                                        "content",
+                                        visible && wco_integration
+                                            ? STORED_STYLES["backgroundColor"]
+                                            : STORED_STYLES["titlebarColor"].light,
                                     );
                                 e.source.postMessage(
                                     {

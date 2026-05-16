@@ -23,7 +23,7 @@
             "run_at": "document_end"
         },
         {
-            "matches": ["https://neverdecaf.github.io/discord-PWA/*"],
+            "matches": ["https://maritedo.github.io/discord-PWA/*"],
             "js": ["customTheme.js"],
             "all_frames": false,
             "run_at": "document_end"
@@ -48,10 +48,10 @@
     ],
     "host_permissions": [
         "https://discord.com/*",
-        "https://neverdecaf.github.io/*"
+        "https://maritedo.github.io/*"
     ],
 
-    "update_url": "https://raw.githubusercontent.com/NeverDecaf/discord-PWA/master/updates.xml",
+    "update_url": "https://raw.githubusercontent.com/maritedo/discord-PWA/master/updates.xml",
     "options_ui": {
         "page": "options.html"
     },
@@ -61,7 +61,7 @@
             "resources": ["manifest.json", "inject.js", "webpackmodules.js"],
             "matches": [
                 "https://discord.com/*",
-                "https://neverdecaf.github.io/*"
+                "https://maritedo.github.io/*"
             ]
         }
     ]
