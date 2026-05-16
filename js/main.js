@@ -1,6 +1,6 @@
 const discordHome = "https://discord.com/channels/@me";
 const modal = document.getElementById("extWarning");
-const extensionID = "edfpalahildnikdjdnmmoekoncglnblh";
+const extensionID = "bjbkafafomllbhnjopbjpgblgpgaimhi";
 var modalCloseButton = document.getElementById("modalClose");
 var installedExtVersion;
 var extUpdateUrl;
