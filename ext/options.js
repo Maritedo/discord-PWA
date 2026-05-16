@@ -5,8 +5,9 @@ function load_options() {
         custom_css: "",
         custom_js: "",
         custom_title: "",
-        enable_custom_theme: false,
-        custom_theme: "#202225",
+        enable_custom_theme: true,
+	    custom_theme: "#f3f3f4",
+	    custom_theme_dark: "#2c2d32",
         relax_CSP_styles: false,
         wco_integration: true,
     };

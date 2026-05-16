@@ -7,9 +7,12 @@ var extUpdateUrl;
 var update_wco = () => {};
 var wco_integration = false;
 const STORED_STYLES = {
-    backgroundColor: "#36393f",
+    backgroundColor: {
+        dark: "#2c2d32",
+        light: "#f3f3f4",
+    },
     titlebarColor: {
-        dark: "#2C2D32",
+        dark: "#2c2d32",
         light: "#f3f3f4",
     },
 };
@@ -87,14 +90,14 @@ window.addEventListener("DOMContentLoaded", (event) => {
                                     theme_element.dark.setAttribute(
                                         "content",
                                         visible && wco_integration
-                                            ? STORED_STYLES["backgroundColor"]
+                                            ? STORED_STYLES["backgroundColor"].dark
                                             : STORED_STYLES["titlebarColor"].dark,
                                     );
                                 if (!theme_element.light.hasAttribute("locked"))
                                     theme_element.light.setAttribute(
                                         "content",
                                         visible && wco_integration
-                                            ? STORED_STYLES["backgroundColor"]
+                                            ? STORED_STYLES["backgroundColor"].light
                                             : STORED_STYLES["titlebarColor"].light,
                                     );
                                 e.source.postMessage(
